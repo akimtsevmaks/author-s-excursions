@@ -167,6 +167,43 @@
   </div>
 </template>
 
+<template id="tpl-bookings">
+  <h2 class="section-title">Мои бронирования</h2>
+  <div id="bookingsList"></div>
+  <div class="empty hidden" id="emptyState"><b>Бронирований пока нет</b>Выберите экскурсию в каталоге — бронирование займёт минуту.</div>
+</template>
+
+<template id="tpl-booking-item">
+  <div class="list-item">
+    <div class="grow">
+      <h4 data-field="name"></h4>
+      <div class="kv">
+        <div data-field="time"></div>
+        <div>Участников: <b data-field="people"></b> · Оплата: <b data-field="pay"></b></div>
+        <div>Почта: <b data-field="email"></b> · Оформлено: <span data-field="createdAt"></span></div>
+      </div>
+    </div>
+    <span class="status" data-field="status"></span>
+  </div>
+</template>
+
+<template id="tpl-mail">
+  <h2 class="section-title">Почта</h2>
+  <p class="hint section-hint">Демо-почтовый ящик: сюда приходят письма, которые сервис отправляет на указанный при бронировании адрес.</p>
+  <div id="mailList"></div>
+  <div class="empty hidden" id="emptyState"><b>Писем пока нет</b>Забронируйте экскурсию — подтверждение придёт сюда.</div>
+</template>
+
+<template id="tpl-letter">
+  <div class="letter">
+    <div class="head">
+      <b data-field="subject"></b>
+      <span class="to" data-field="to"></span>
+    </div>
+    <div class="body" data-field="body"></div>
+  </div>
+</template>
+
 
 <script src="js/storage.js"></script>
 <script src="js/cover.js"></script>
@@ -180,6 +217,8 @@
 <script src="js/detail.js"></script>
 
 <script src="js/mail.js"></script>
+<script src="js/bookings.js"></script>
+<script src="js/mail-view.js"></script>
 
 <script src="js/state.js"></script>
 <script src="js/render.js"></script>

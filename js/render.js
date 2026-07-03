@@ -31,17 +31,13 @@ function render(){
     view.className = 'empty';
     view.innerHTML = '<b>Создание экскурсии</b>Форма создания будет здесь.';
   } else if (state.view==='bookings') {
-    view = document.createElement('div');
-    view.className = 'empty';
-    view.innerHTML = '<b>Мои бронирования</b>Список ваших броней появится здесь.';
+    view = buildBookingsView();
   } else if (state.view==='requests') {
     view = document.createElement('div');
     view.className = 'empty';
     view.innerHTML = '<b>Заявки гидам</b>Панель управления гида.';
   } else if (state.view==='mail') {
-    view = document.createElement('div');
-    view.className = 'empty';
-    view.innerHTML = '<b>Почта</b>Здесь будут письма подтверждения.';
+    view = buildMailView();
   }
   
   app.replaceChildren(view);
