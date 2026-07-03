@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Свои места — авторские экскурсии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-in">
+    <button class="logo" id="logoBtn" type="button"><span class="dot"></span>Свои&nbsp;места</button>
+    <button class="citybtn" id="cityBtn" type="button">📍 <span id="cityLabel">—</span></button>
+    <nav>
+      <button id="nav-catalog" type="button">Каталог</button>
+      <button id="nav-bookings" type="button">Мои брони</button>
+      <button id="nav-requests" type="button">Заявки гидам <span class="badge-count hidden" id="reqBadge"></span></button>
+      <button id="nav-mail" type="button">Почта <span class="badge-count hidden" id="mailBadge"></span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<div class="modal-back hidden" id="modalBack"></div>
+<div id="toast"></div>
+
+
+<script src="js/storage.js"></script>
+
+</body>
+</html>
