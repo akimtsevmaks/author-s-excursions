@@ -157,6 +157,22 @@ ${bk.slot ? 'Время: ' + fmtDT(bk.slot) : 'Время: свободный ф
 Сумма: ${fmtMoney(total)}
 
 Как только гид подтвердит бронирование, мы пришлём его контакты отдельным письмом.`);
+
+    const appUrl = location.origin + location.pathname;
+    sendMail(MAIL_CFG.GUIDE_EMAIL, `Новая заявка на бронирование: ${e.name}`,
+`Поступила новая заявка на экскурсию.
+
+Экскурсия: ${e.name}
+Город: ${e.country}, ${e.city}
+${bk.slot ? 'Время: ' + fmtDT(bk.slot) : 'Время: свободный формат'}
+Участников: ${people}
+Почта гостя: ${email}
+Оплата: ${bk.pay==='online' ? 'онлайн (оплачено, демо)' : 'на месте'}
+Сумма: ${fmtMoney(total)}
+
+Подтвердить бронирование: ${appUrl}?decision=approved&booking=${bk.id}
+Отклонить бронирование: ${appUrl}?decision=rejected&booking=${bk.id}`);
+
     closeModal();
     toast('Бронирование оформлено — подтверждение отправлено на почту');
     go('bookings');
