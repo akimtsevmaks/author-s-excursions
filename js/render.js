@@ -22,11 +22,10 @@ function render(){
   const app = document.getElementById('app');
   let view;
   
-  if (state.view==='catalog') view = buildCatalogView();
-  else if (state.view==='detail') {
-    view = document.createElement('div');
-    view.className = 'empty';
-    view.innerHTML = `<b>Детали экскурсии (ID: ${state.excId})</b>Здесь будет подробное описание.`;
+  if (state.view==='catalog') {
+     view = buildCatalogView();
+  } else if (state.view==='detail') {
+    view = buildDetailView();
   } else if (state.view==='create') {
     view = document.createElement('div');
     view.className = 'empty';

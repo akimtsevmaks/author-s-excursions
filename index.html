@@ -97,6 +97,60 @@
   </article>
 </template>
 
+<template id="tpl-detail">
+  <button class="back" id="backBtn" type="button">← Назад к каталогу</button>
+  <article class="detail">
+    <div class="gallery" id="gallery"></div>
+    <div class="detail-body">
+      <div>
+        <span class="stamp stamp-static" data-field="stamp"></span>
+        <h2 data-field="name"></h2>
+        <div class="place" data-field="place"></div>
+        <div class="fulltext" data-field="full"></div>
+      </div>
+      <div>
+        <div class="spec">
+          <div><span>Формат</span><span data-field="format"></span></div>
+          <div><span>Длительность</span><span data-field="duration"></span></div>
+          <div data-row="groupSize"><span>Размер группы</span><span data-field="groupSize"></span></div>
+          <div><span>Дети</span><span data-field="kids"></span></div>
+          <div><span>Передвижение</span><span data-field="transport"></span></div>
+        </div>
+        <div class="price-big"><span data-field="priceValue"></span><small data-field="priceUnit"></small></div>
+      </div>
+    </div>
+  </article>
+
+  <section class="panel" aria-label="Бронирование">
+    <h3>Бронирование</h3>
+    <div data-block="withSlots">
+      <div class="field"><label>Выберите время</label></div>
+      <div class="slots" id="slotsContainer"></div>
+      <div class="hint mb-14">Гид предложил эти даты — выберите удобную.</div>
+    </div>
+    <div class="hint mb-14" data-block="noSlots">Эта экскурсия проходит в свободном формате — конкретное время выбирать не нужно, гид свяжется с вами после подтверждения.</div>
+
+    <div class="form-grid mb-14">
+      <div class="field"><label for="b-people">Количество человек</label>
+        <input type="number" id="b-people" min="1">
+        <div class="hint hidden" id="groupSizeHint"></div></div>
+      <div class="field"><label for="b-email">Ваша почта</label>
+        <input type="email" id="b-email" placeholder="you@example.com">
+        <div class="hint">Сюда придёт подтверждение и контакты гида</div></div>
+    </div>
+    <div class="field mb-8"><label>Способ оплаты</label></div>
+    <div class="pay-opts mb-18">
+      <button class="pay" id="payOnline" type="button">
+        <b>💳 Оплатить онлайн</b><span>Интернет-эквайринг (демо-режим)</span></button>
+      <button class="pay" id="payOnsite" type="button">
+        <b>🤝 Оплата на месте</b><span>Наличными или переводом гиду</span></button>
+    </div>
+    <button class="btn btn-primary btn-block" id="submitBookingBtn" type="button">Забронировать</button>
+  </section>
+</template>
+
+<template id="tpl-slot-button"><button class="slot" type="button"></button></template>
+
 
 <script src="js/storage.js"></script>
 <script src="js/cover.js"></script>
@@ -107,6 +161,7 @@
 <script src="js/city.js"></script>
 
 <script src="js/catalog.js"></script>
+<script src="js/detail.js"></script>
 
 <script src="js/state.js"></script>
 <script src="js/render.js"></script>
