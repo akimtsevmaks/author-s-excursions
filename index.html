@@ -29,11 +29,88 @@
 <div class="modal-back hidden" id="modalBack"></div>
 <div id="toast"></div>
 
+<template id="tpl-city-modal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <h3>Где вы сейчас?</h3>
+    <p>При первом открытии показываем экскурсии в вашем городе. Город можно сменить в любой момент.</p>
+    <div class="field mb-16">
+      <label for="cityPick">Город</label>
+      <select id="cityPick"></select>
+    </div>
+    <div class="modal-buttons">
+      <button class="btn btn-ghost" id="cityCancelBtn" type="button">Отмена</button>
+      <button class="btn btn-primary" id="cityPickBtn" type="button">Выбрать</button>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-catalog">
+  <div class="hero">
+    <div class="eyebrow">Авторские экскурсии от местных</div>
+    <h1>Город глазами того, <em>кто здесь живёт</em></h1>
+    <p>Маршруты придумывают не турфирмы, а местные жители и гиды. Выбирайте, бронируйте — и после подтверждения гид свяжется с вами напрямую.</p>
+  </div>
+
+  <section class="filter" aria-label="Фильтр экскурсий">
+    <div class="filter-grid">
+      <div class="field"><label for="f-country">Страна</label>
+        <input id="f-country" list="dl-country" placeholder="Любая">
+        <datalist id="dl-country"></datalist></div>
+      <div class="field"><label for="f-city">Город</label>
+        <input id="f-city" list="dl-city" placeholder="Любой">
+        <datalist id="dl-city"></datalist></div>
+      <div class="field"><label for="f-from">Даты с</label><input type="date" id="f-from"></div>
+      <div class="field"><label for="f-to">Даты по</label><input type="date" id="f-to"></div>
+      <div class="field"><label for="f-people">Человек</label><input type="number" id="f-people" min="1" placeholder="Сколько вас"></div>
+      <div class="field"><label for="f-kids">Дети</label>
+        <select id="f-kids">
+          <option value="any">Не важно</option>
+          <option value="yes">Идём с детьми</option>
+        </select></div>
+      <div class="filter-actions">
+        <button class="btn btn-primary" id="searchBtn" type="button">Поиск</button>
+        <button class="btn btn-ghost hidden" id="resetBtn" type="button">Сброс</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="results-meta" id="resultsMeta"></div>
+  <div class="cards" id="cardsContainer"></div>
+  <div class="empty hidden" id="emptyState"><b>Здесь пока пусто</b>Попробуйте изменить фильтр — или создайте первую экскурсию в этом городе сами.</div>
+</template>
+
+<template id="tpl-ticket-card">
+  <article class="ticket" role="button" tabindex="0">
+    <div class="photo" data-field="photo"></div>
+    <span class="notch top"></span><span class="notch bot"></span>
+    <div class="info">
+      <span class="stamp" data-field="stamp"></span>
+      <h3 data-field="name"></h3>
+      <div class="desc" data-field="desc"></div>
+      <div class="meta-row">
+        <span>📍 <span data-field="city"></span></span>
+        <span>⏱ <span data-field="duration"></span></span>
+        <span>💰 <span data-field="priceValue"></span> <b data-field="priceUnit"></b></span>
+        <span>🖼 фото: <span data-field="photoCount"></span></span>
+      </div>
+    </div>
+  </article>
+</template>
+
 
 <script src="js/storage.js"></script>
 <script src="js/cover.js"></script>
 <script src="js/format.js"></script>
 <script src="js/seed.js"></script>
+
+<script src="js/modal.js"></script>
+<script src="js/city.js"></script>
+
+<script src="js/catalog.js"></script>
+
+<script src="js/state.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

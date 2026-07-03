@@ -22,11 +22,8 @@ function render(){
   const app = document.getElementById('app');
   let view;
   
-  if (state.view==='catalog') {
-    view = document.createElement('div');
-    view.className = 'empty';
-    view.innerHTML = '<b>Каталог экскурсий</b>Здесь будет список экскурсий.';
-  } else if (state.view==='detail') {
+  if (state.view==='catalog') view = buildCatalogView();
+  else if (state.view==='detail') {
     view = document.createElement('div');
     view.className = 'empty';
     view.innerHTML = `<b>Детали экскурсии (ID: ${state.excId})</b>Здесь будет подробное описание.`;
