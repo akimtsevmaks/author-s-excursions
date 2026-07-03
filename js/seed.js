@@ -22,7 +22,7 @@ function seed() {
       kids: false,
       transport: 'На автомобилях группы',
       price: 2200,
-      contacts: 'Павел Гринёв · +7 916 402 88 31 · pavel.avangard@ya.ru',
+      contacts: 'Павел Гринёв · +7 *** 402 88 31 · pavel.avangard@example.com',
       photos: [cover('#BF3B2B', '#4E1610', '🚲'), cover('#2E4A5C', '#16262E', '🏗️')],
       slots: [at(3, 11), at(8, 11)],
       creator: 'seed'
@@ -40,7 +40,7 @@ function seed() {
       kids: false,
       transport: 'Автобусом',
       price: 2000,
-      contacts: 'Игорь Соснин · +7 903 221 45 10 · igor.msk.night@gmail.com',
+      contacts: 'Игорь Соснин · +7 *** 221 45 10 · igor.msk.night@example.com',
       photos: [cover('#16262E', '#3A6B8C', '🌃'), cover('#B77E12', '#4E3005', '🏙️')],
       slots: [at(2, 20), at(5, 20), at(9, 20)],
       creator: 'seed'
@@ -58,7 +58,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 7500,
-      contacts: 'Анна Ветрова · +7 926 118 90 22 · anna.khitrovka@gmail.com',
+      contacts: 'Анна Ветрова · +7 *** 118 90 22 · anna.khitrovka@example.com',
       photos: [cover('#7A4FBF', '#2A1B4E', '🕯️'), cover('#2E4A5C', '#16262E', '🚪')],
       slots: [at(3, 12), at(7, 12)],
       creator: 'seed'
@@ -76,7 +76,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 1800,
-      contacts: 'Ксения Волкова · +7 921 555 34 12 · @ksenia_spb_walks',
+      contacts: 'Ксения Волкова · +7 *** 555 34 12 · @ksenia_spb_walks',
       photos: [cover('#2E4A5C', '#16262E', '🏛️'), cover('#0E7A6B', '#123B34', '☕')],
       slots: [at(1, 14), at(2, 12), at(6, 16)],
       creator: 'seed'
@@ -94,7 +94,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 6800,
-      contacts: 'Глеб Соколов · +7 911 400 12 55 · gleb.kolomna.spb@gmail.com',
+      contacts: 'Глеб Соколов · +7 *** 400 12 55 · gleb.kolomna.spb@example.com',
       photos: [cover('#0E7A6B', '#123B34', '📖'), cover('#2E4A5C', '#16262E', '🏚️')],
       slots: [at(2, 11), at(5, 11), at(9, 11)],
       creator: 'seed'
@@ -112,7 +112,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 800,
-      contacts: 'Марина Титова · @marina.vasiliy.audio · marina.audio@walks.ru',
+      contacts: 'Марина Титова · @marina.vasiliy.audio · marina.audio@example.com',
       photos: [cover('#3A6B8C', '#16262E', '🎧'), cover('#B77E12', '#4E3005', '⚓')],
       slots: [],
       creator: 'seed'
@@ -130,7 +130,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 1300,
-      contacts: 'Айрат Хайруллин · +7 927 123 45 67 · airat.kazan.walks@gmail.com',
+      contacts: 'Айрат Хайруллин · +7 *** 123 45 67 · airat.kazan.walks@example.com',
       photos: [cover('#2E4A5C', '#16262E', '🕌'), cover('#B77E12', '#4E3005', '🥟')],
       slots: [at(1, 11), at(3, 11), at(7, 11)],
       creator: 'seed'
@@ -148,7 +148,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 1600,
-      contacts: 'Гульнара Сафина · +7 917 233 40 18 · gulnara.kazan.food@gmail.com',
+      contacts: 'Гульнара Сафина · +7 *** 233 40 18 · gulnara.kazan.food@example.com',
       photos: [cover('#B77E12', '#6B4708', '🥮'), cover('#BF3B2B', '#4E1610', '🍵')],
       slots: [at(2, 13), at(5, 13), at(9, 13)],
       creator: 'seed'
@@ -166,7 +166,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 2900,
-      contacts: 'Мари Дюваль · +33 6 12 44 78 90 · marie@localwalks.fr',
+      contacts: 'Мари Дюваль · +33 *** 44 78 90 · marie@example.com',
       photos: [cover('#3A6B8C', '#16262E', '🎨'), cover('#0E7A6B', '#123B34', '🥖'), cover('#7A4FBF', '#2A1B4E', '🌆')],
       slots: [at(2, 11), at(4, 15), at(7, 11)],
       creator: 'seed'
@@ -184,7 +184,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 9500,
-      contacts: 'Антуан Леру · +33 7 55 21 03 66 · antoine.walks@gmail.com',
+      contacts: 'Антуан Леру · +33 *** 21 03 66 · antoine.walks@example.com',
       photos: [cover('#B77E12', '#6B4708', '🌅'), cover('#16262E', '#3A6B8C', '📚')],
       slots: [at(3, 7), at(5, 7), at(9, 7)],
       creator: 'seed'
@@ -202,7 +202,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 2500,
-      contacts: 'Люк Фонтен · +33 6 88 41 20 15 · luc.catacombes.paris@gmail.com',
+      contacts: 'Люк Фонтен · +33 *** 41 20 15 · luc.catacombes.paris@example.com',
       photos: [cover('#16262E', '#3A6B8C', '💀'), cover('#2E4A5C', '#16262E', '🕯️')],
       slots: [at(1, 16), at(4, 16), at(8, 16)],
       creator: 'seed'
@@ -220,7 +220,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 2100,
-      contacts: 'Николя Мартен · +33 6 71 09 44 32 · nicolas.traboules.lyon@gmail.com',
+      contacts: 'Николя Мартен · +33 *** 09 44 32 · nicolas.traboules.lyon@example.com',
       photos: [cover('#7A4FBF', '#2A1B4E', '🧵'), cover('#B77E12', '#6B4708', '🚪')],
       slots: [at(2, 10), at(6, 10), at(10, 10)],
       creator: 'seed'
@@ -238,7 +238,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 8800,
-      contacts: 'Селин Дюбуа · +33 6 44 22 18 09 · celine.bouchon.lyon@gmail.com',
+      contacts: 'Селин Дюбуа · +33 *** 22 18 09 · celine.bouchon.lyon@example.com',
       photos: [cover('#B77E12', '#4E3005', '🧀'), cover('#BF3B2B', '#4E1610', '🍷')],
       slots: [at(3, 13), at(7, 13)],
       creator: 'seed'
@@ -256,7 +256,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 2600,
-      contacts: 'Джулия Романо · +39 348 200 11 22 · giulia.roma.walks@gmail.com',
+      contacts: 'Джулия Романо · +39 *** 200 11 22 · giulia.roma.walks@example.com',
       photos: [cover('#BF3B2B', '#4E1610', '🏛️'), cover('#B77E12', '#4E3005', '🍅')],
       slots: [at(2, 8), at(5, 8), at(9, 8)],
       creator: 'seed'
@@ -274,7 +274,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 9700,
-      contacts: 'Federico Conti · +39 349 502 88 14 · federico.affreschi.roma@gmail.com',
+      contacts: 'Federico Conti · +39 *** 502 88 14 · federico.affreschi.roma@example.com',
       photos: [cover('#B77E12', '#6B4708', '🖼️'), cover('#2E4A5C', '#16262E', '⛪')],
       slots: [at(4, 10), at(8, 10)],
       creator: 'seed'
@@ -292,7 +292,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 8000,
-      contacts: 'Марко Бенедетти · +39 333 771 45 09 · marco.oltrarno@libero.it',
+      contacts: 'Марко Бенедетти · +39 *** 771 45 09 · marco.oltrarno@example.com',
       photos: [cover('#B77E12', '#6B4708', '🖌️'), cover('#2E4A5C', '#16262E', '🏺')],
       slots: [at(3, 10), at(7, 10)],
       creator: 'seed'
@@ -310,7 +310,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 2700,
-      contacts: 'Симона Ло Каскио · +39 347 611 20 55 · simona.santambrogio.fi@gmail.com',
+      contacts: 'Симона Ло Каскио · +39 *** 611 20 55 · simona.santambrogio.fi@example.com',
       photos: [cover('#0E7A6B', '#123B34', '🍇'), cover('#BF3B2B', '#4E1610', '🍝')],
       slots: [at(2, 12), at(6, 12), at(10, 12)],
       creator: 'seed'
@@ -328,7 +328,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 3100,
-      contacts: 'Кьяра Моретти · +39 320 654 78 21 · chiara.venezia@gmail.com',
+      contacts: 'Кьяра Моретти · +39 *** 654 78 21 · chiara.venezia@example.com',
       photos: [cover('#0E7A6B', '#123B34', '🐟'), cover('#7A4FBF', '#2A1B4E', '🛶')],
       slots: [at(4, 6), at(6, 6), at(11, 6)],
       creator: 'seed'
@@ -346,7 +346,7 @@ function seed() {
       kids: true,
       transport: 'На автомобилях группы',
       price: 9000,
-      contacts: 'Алессандро Дзанетти · +39 328 900 14 27 · alessandro.murano.glass@gmail.com',
+      contacts: 'Алессандро Дзанетти · +39 *** 900 14 27 · alessandro.murano.glass@example.com',
       photos: [cover('#7A4FBF', '#16262E', '🔥'), cover('#B77E12', '#4E3005', '🏺')],
       slots: [at(3, 15), at(7, 15)],
       creator: 'seed'
@@ -364,7 +364,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 2400,
-      contacts: 'Пау Ферран · +34 611 223 344 · pau.bcn.walks@gmail.com',
+      contacts: 'Пау Ферран · +34 *** 223 344 · pau.bcn.walks@example.com',
       photos: [cover('#7A4FBF', '#16262E', '🏢'), cover('#B77E12', '#4E3005', '🍷')],
       slots: [at(2, 17), at(5, 17)],
       creator: 'seed'
@@ -382,7 +382,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 2300,
-      contacts: 'Марта Соле · +34 622 118 907 · marta.barceloneta.tapas@gmail.com',
+      contacts: 'Марта Соле · +34 *** 118 907 · marta.barceloneta.tapas@example.com',
       photos: [cover('#0E7A6B', '#123B34', '🐟'), cover('#B77E12', '#6B4708', '🥘')],
       slots: [at(1, 19), at(4, 19), at(8, 19)],
       creator: 'seed'
@@ -400,7 +400,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 7000,
-      contacts: 'Альваро Хименес · +34 655 900 12 34 · alvaro.tapas.madrid@gmail.com',
+      contacts: 'Альваро Хименес · +34 *** 900 12 34 · alvaro.tapas.madrid@example.com',
       photos: [cover('#BF3B2B', '#4E1610', '🍢'), cover('#0E7A6B', '#123B34', '🍷')],
       slots: [at(3, 13), at(8, 13)],
       creator: 'seed'
@@ -418,7 +418,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 6200,
-      contacts: 'Лаура Гарсия · +34 644 217 890 · laura.palacio.madrid@gmail.com',
+      contacts: 'Лаура Гарсия · +34 *** 217 890 · laura.palacio.madrid@example.com',
       photos: [cover('#2E4A5C', '#16262E', '👑'), cover('#B77E12', '#6B4708', '🌳')],
       slots: [at(2, 8), at(6, 8), at(10, 8)],
       creator: 'seed'
@@ -436,7 +436,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 1200,
-      contacts: 'Нино Беридзе · @nino_tbilisi_audio · nino.audio@walks.ge',
+      contacts: 'Нино Беридзе · @nino_tbilisi_audio · nino.audio@example.com',
       photos: [cover('#0E7A6B', '#123B34', '🏞️'), cover('#B77E12', '#6B4708', '🛁')],
       slots: [],
       creator: 'seed'
@@ -454,7 +454,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 1900,
-      contacts: 'Гиорги Мчедлишвили · +995 555 12 34 56 · giorgi.tbilisi.wine@gmail.com',
+      contacts: 'Гиорги Мчедлишвили · +995 *** 12 34 56 · giorgi.tbilisi.wine@example.com',
       photos: [cover('#B77E12', '#4E3005', '♨️'), cover('#BF3B2B', '#4E1610', '🍷')],
       slots: [at(2, 16), at(5, 16), at(9, 16)],
       creator: 'seed'
@@ -472,7 +472,7 @@ function seed() {
       kids: false,
       transport: 'Автобусом',
       price: 2400,
-      contacts: 'Эмре Кая · +90 532 611 28 47 · emre.istanbul@mail.com',
+      contacts: 'Эмре Кая · +90 *** 611 28 47 · emre.istanbul@example.com',
       photos: [cover('#7A4FBF', '#16262E', '🌉'), cover('#BF3B2B', '#4E1610', '🐟'), cover('#B77E12', '#4E3005', '🫖')],
       slots: [at(2, 18), at(5, 18)],
       creator: 'seed'
@@ -490,7 +490,7 @@ function seed() {
       kids: true,
       transport: 'Пешком',
       price: 8200,
-      contacts: 'Дениз Йылмаз · +90 535 220 17 63 · deniz.grandbazaar@gmail.com',
+      contacts: 'Дениз Йылмаз · +90 *** 220 17 63 · deniz.grandbazaar@example.com',
       photos: [cover('#B77E12', '#6B4708', '🌶️'), cover('#BF3B2B', '#4E1610', '🍬')],
       slots: [at(3, 11), at(7, 11)],
       creator: 'seed'
@@ -508,7 +508,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 9800,
-      contacts: 'Кэнджи Танака · +81 90 1234 5678 · kenji.tsukiji.tour@gmail.com',
+      contacts: 'Кэнджи Танака · +81 *** 1234 5678 · kenji.tsukiji.tour@example.com',
       photos: [cover('#16262E', '#3A6B8C', '🍣'), cover('#BF3B2B', '#4E1610', '🐟')],
       slots: [at(4, 5), at(8, 5)],
       creator: 'seed'
@@ -526,7 +526,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 3600,
-      contacts: 'Харука Ито · +81 70 3456 7890 · haruka.shinjuku.night@gmail.com',
+      contacts: 'Харука Ито · +81 *** 3456 7890 · haruka.shinjuku.night@example.com',
       photos: [cover('#7A4FBF', '#16262E', '🌃'), cover('#BF3B2B', '#4E1610', '🍶')],
       slots: [at(2, 20), at(5, 20), at(9, 20)],
       creator: 'seed'
@@ -544,7 +544,7 @@ function seed() {
       kids: false,
       transport: 'Пешком',
       price: 3400,
-      contacts: 'Юкико Сато · +81 80 2345 6789 · yukiko.kyoto.tea@gmail.com',
+      contacts: 'Юкико Сато · +81 *** 2345 6789 · yukiko.kyoto.tea@example.com',
       photos: [cover('#0E7A6B', '#123B34', '⛩️'), cover('#7A4FBF', '#2A1B4E', '🍵')],
       slots: [at(3, 9), at(7, 9), at(11, 9)],
       creator: 'seed'
