@@ -20,7 +20,6 @@ function buildCreateView(){
   const groupSizeInput = frag.querySelector('#c-groupsize');
   const kidsSelect = frag.querySelector('#c-kids');
   const transportSelect = frag.querySelector('#c-transport');
-  const priceTypeSelect = frag.querySelector('#c-pricetype');
   const priceInput = frag.querySelector('#c-price');
   const contactsInput = frag.querySelector('#c-contacts');
   const notifyEmailInput = frag.querySelector('#c-notify-email');
@@ -36,9 +35,12 @@ function buildCreateView(){
   syncGroupSizeVisibility();
 
   photosInput.addEventListener('change', ()=>{
-    const files = [...photosInput.files].slice(0, 6);
+    const allFiles = [...photosInput.files];
+    const files = allFiles.filter(f => f.type.startsWith('image/')).slice(0, 6);
     photos = [];
     photoStrip.replaceChildren();
+    if (allFiles.length && !files.length) return toast('Выберите файлы изображений (JPG, PNG и т.п.)');
+    if (files.length < allFiles.length) toast('Часть файлов пропущена — это не изображения');
     if (!files.length) return;
     let loaded = 0;
     files.forEach(f=>{
@@ -87,7 +89,9 @@ function buildCreateView(){
   addSlotBtn.addEventListener('click', ()=>{
     const v = slotInput.value;
     if (!v) return toast('Выберите дату и время');
-    const iso = new Date(v).toISOString();
+    const picked = new Date(v);
+    if (picked.getTime() <= Date.now()) return toast('Выберите время в будущем');
+    const iso = picked.toISOString();
     if (slots.includes(iso)) return toast('Это время уже добавлено');
     slots.push(iso);
     slots.sort();
@@ -106,6 +110,7 @@ function buildCreateView(){
     for (const [input, label] of required){
       if (!input.value.trim()) return toast('Заполните ' + label);
     }
+    if (!/\d/.test(durationInput.value.trim())) return toast('Укажите длительность с числом, например «3 часа»');
     if (fmt==='Групповая' && (!groupSize || groupSize<2)) return toast('Укажите размер группы (от 2 человек)');
     if (Number(priceInput.value) < 0) return toast('Стоимость не может быть отрицательной');
 
@@ -120,7 +125,7 @@ function buildCreateView(){
       groupSize: fmt==='Групповая' ? groupSize : null,
       kids: kidsSelect.value==='yes',
       transport:transportSelect.value,
-      priceType:priceTypeSelect.value, price:Number(priceInput.value),
+      price:Number(priceInput.value),
       contacts:contactsInput.value.trim(),
       notifyEmail,
       photos: photos.length ? photos : [cover('#0E7A6B','#16262E','🧭')],

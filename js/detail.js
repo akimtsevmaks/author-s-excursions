@@ -44,7 +44,7 @@ function buildDetailView() {
   frag.querySelector('[data-field="kids"]').textContent = e.kids ? 'Можно с детьми' : 'Только взрослые';
   frag.querySelector('[data-field="transport"]').textContent = e.transport;
   frag.querySelector('[data-field="priceValue"]').textContent = fmtMoney(e.price);
-  frag.querySelector('[data-field="priceUnit"]').textContent = e.priceType === 'person' ? 'за одного человека' : 'за всю группу';
+  frag.querySelector('[data-field="priceUnit"]').textContent = 'за одного человека';
 
   const peopleInput = frag.querySelector('#b-people');
   peopleInput.value = booking.people != null ? booking.people : '2';
@@ -145,7 +145,7 @@ function submitBooking(e, peopleInput, emailInput){
                  pay:state.booking.pay, status:'pending', createdAt:new Date().toISOString() };
     bookings.unshift(bk);
     LS.set(K.BOOK, bookings);
-    const total = e.priceType==='person' ? e.price*people : e.price;
+    const total = e.price * people;
     sendMail(email, `Бронирование оформлено: ${e.name}`,
 `Ваше бронирование принято и ожидает подтверждения гида.
 
@@ -180,7 +180,7 @@ ${bk.slot ? 'Время: ' + fmtDT(bk.slot) : 'Время: свободный ф
   };
 
   if (state.booking.pay === 'online'){
-    const total = e.priceType==='person' ? e.price*people : e.price;
+    const total = e.price * people;
     showPayModal(e, people, total, finish);
   } else {
     finish();

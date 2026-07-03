@@ -60,7 +60,7 @@ function buildTicketCard(e) {
   frag.querySelector('[data-field="city"]').textContent = e.city;
   frag.querySelector('[data-field="duration"]').textContent = e.duration;
   frag.querySelector('[data-field="priceValue"]').textContent = fmtMoney(e.price);
-  frag.querySelector('[data-field="priceUnit"]').textContent = e.priceType === 'person' ? '/ чел.' : '/ группа';
+  frag.querySelector('[data-field="priceUnit"]').textContent = '/ чел.';
   frag.querySelector('[data-field="photoCount"]').textContent = e.photos.length;
 
   article.setAttribute('aria-label', e.name);
@@ -114,6 +114,12 @@ function buildCatalogView() {
   });
 
   frag.querySelector('#searchBtn').addEventListener('click', () => {
+    if (fromInput.value && toInput.value && fromInput.value > toInput.value) {
+      return toast('«Даты с» не может быть позже «Даты по»');
+    }
+    if (peopleInput.value && parseInt(peopleInput.value) < 1) {
+      return toast('Укажите корректное количество человек');
+    }
     state.filter = {
       country: countryInput.value.trim(),
       city: cityInput.value.trim(),
