@@ -33,9 +33,7 @@ function render(){
   } else if (state.view==='bookings') {
     view = buildBookingsView();
   } else if (state.view==='requests') {
-    view = document.createElement('div');
-    view.className = 'empty';
-    view.innerHTML = '<b>Заявки гидам</b>Панель управления гида.';
+    view = buildRequestsView();
   } else if (state.view==='mail') {
     view = buildMailView();
   }

@@ -204,6 +204,30 @@
   </div>
 </template>
 
+<template id="tpl-requests">
+  <h2 class="section-title">Заявки гидам</h2>
+  <p class="hint section-hint">Демо-кабинет создателя экскурсий: здесь гид видит новые бронирования и подтверждает их. После подтверждения путешественнику на почту уходят контакты гида.</p>
+  <div id="requestsList"></div>
+  <div class="empty hidden" id="emptyState"><b>Заявок пока нет</b>Как только кто-то забронирует экскурсию, заявка появится здесь.</div>
+</template>
+
+<template id="tpl-request-item">
+  <div class="list-item">
+    <div class="grow">
+      <h4 data-field="name"></h4>
+      <div class="kv">
+        <div data-field="time"></div>
+        <div>Участников: <b data-field="people"></b> · Оплата: <b data-field="pay"></b></div>
+        <div>Почта гостя: <b data-field="email"></b></div>
+      </div>
+    </div>
+    <div class="request-actions" data-block="pending">
+      <button class="btn btn-primary mini" data-action="approve" type="button">Подтвердить</button>
+      <button class="btn btn-danger mini" data-action="reject" type="button">Отклонить</button>
+    </div>
+    <span class="status hidden" data-block="decided"></span>
+  </div>
+</template>
 
 <script src="js/storage.js"></script>
 <script src="js/cover.js"></script>
@@ -219,6 +243,7 @@
 <script src="js/mail.js"></script>
 <script src="js/bookings.js"></script>
 <script src="js/mail-view.js"></script>
+<script src="js/requests.js"></script>
 
 <script src="js/state.js"></script>
 <script src="js/render.js"></script>
