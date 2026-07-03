@@ -25,5 +25,5 @@ function cover(c1, c2, emoji){
   ctx.textBaseline = 'middle';
   ctx.fillText(emoji, 320, 227);
 
-  return canvas.toDataURL('image/png');
+  return canvas.toDataURL('image/jpeg', 0.7);
 }

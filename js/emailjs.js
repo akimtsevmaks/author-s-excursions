@@ -11,6 +11,7 @@ if (typeof emailjs !== 'undefined') {
 
 function sendRealMail(to, subject, body) {
   if (typeof emailjs === 'undefined') return;
+  if (LS.get(K.DEBUG_NO_EMAIL, false)) return;
   emailjs.send(MAIL_CFG.SERVICE_ID, MAIL_CFG.TEMPLATE_ID, {
     to_email: to,
     subject: subject,

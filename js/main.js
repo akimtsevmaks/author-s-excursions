@@ -8,6 +8,20 @@ document.getElementById('nav-requests').addEventListener('click', ()=>go('reques
 document.getElementById('nav-mail').addEventListener('click', ()=>go('mail'));
 document.getElementById('fabBtn').addEventListener('click', ()=>go('create'));
 
+const debugMailToggle = document.getElementById('debugMailToggle');
+const syncDebugMailToggle = () => {
+  const active = LS.get(K.DEBUG_NO_EMAIL, false);
+  debugMailToggle.classList.toggle('active', active);
+  debugMailToggle.setAttribute('aria-checked', String(active));
+};
+debugMailToggle.addEventListener('click', () => {
+  const active = !LS.get(K.DEBUG_NO_EMAIL, false);
+  LS.set(K.DEBUG_NO_EMAIL, active);
+  syncDebugMailToggle();
+  toast(active ? 'Реальная отправка писем отключена (дебаг)' : 'Реальная отправка писем включена');
+});
+syncDebugMailToggle();
+
 if (!currentCity()){
   render();
   openCityModal(true);

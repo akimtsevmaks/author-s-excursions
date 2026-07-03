@@ -19,7 +19,8 @@ const K = {
   CITY: 'sm_city',
   SEED: 'sm_seeded_v1',
   MAILREAD: 'sm_mailread',
-  REQSEEN: 'sm_reqseen'
+  REQSEEN: 'sm_reqseen',
+  DEBUG_NO_EMAIL: 'sm_debug_no_email'
 };
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);

@@ -11,6 +11,10 @@
 </head>
 <body>
 
+<button id="debugMailToggle" class="debug-toggle" type="button" role="switch" aria-checked="false" title="Отключить реальную отправку писем (дебаг)">
+  <span class="debug-toggle-thumb"></span>
+</button>
+
 <header>
   <div class="header-in">
     <button class="logo" id="logoBtn" type="button"><span class="dot"></span>Свои&nbsp;места</button>
@@ -276,6 +280,9 @@
       <div class="field"><label for="c-contacts">Контакты создателя *</label>
         <input id="c-contacts" placeholder="Имя · телефон · почта или @ник">
         <div class="hint">Гость получит их на почту после подтверждения брони</div></div>
+      <div class="field"><label for="c-notify-email">Email для уведомлений о бронированиях</label>
+        <input type="email" id="c-notify-email" placeholder="you@example.com">
+        <div class="hint">Сюда будут приходить заявки на бронирование этой экскурсии. Если не указать или указать некорректный — уведомления получит администратор сервиса</div></div>
 
       <div class="field wide"><label>Доступное время (необязательно)</label>
         <div class="slot-list" id="slotList"></div>

@@ -23,6 +23,7 @@ function buildCreateView(){
   const priceTypeSelect = frag.querySelector('#c-pricetype');
   const priceInput = frag.querySelector('#c-price');
   const contactsInput = frag.querySelector('#c-contacts');
+  const notifyEmailInput = frag.querySelector('#c-notify-email');
   const slotList = frag.querySelector('#slotList');
   const slotInput = frag.querySelector('#c-slot');
   const addSlotBtn = frag.querySelector('#addSlotBtn');
@@ -108,6 +109,9 @@ function buildCreateView(){
     if (fmt==='Групповая' && (!groupSize || groupSize<2)) return toast('Укажите размер группы (от 2 человек)');
     if (Number(priceInput.value) < 0) return toast('Стоимость не может быть отрицательной');
 
+    const notifyEmailRaw = notifyEmailInput.value.trim();
+    const notifyEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(notifyEmailRaw) ? notifyEmailRaw : null;
+
     const exc = LS.get(K.EXC,[]);
     exc.unshift({
       id:uid(), name:nameInput.value.trim(), short:shortInput.value.trim(), full:fullInput.value.trim(),
@@ -118,6 +122,7 @@ function buildCreateView(){
       transport:transportSelect.value,
       priceType:priceTypeSelect.value, price:Number(priceInput.value),
       contacts:contactsInput.value.trim(),
+      notifyEmail,
       photos: photos.length ? photos : [cover('#0E7A6B','#16262E','🧭')],
       slots:[...slots], creator:'user'
     });

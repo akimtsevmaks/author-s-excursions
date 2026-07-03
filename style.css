@@ -958,3 +958,41 @@ main {
 .invisible {
   visibility: hidden;
 }
+
+.debug-toggle {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  z-index: 300;
+  width: 26px;
+  height: 14px;
+  padding: 1px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  opacity: .35;
+}
+
+.debug-toggle:hover {
+  opacity: .8;
+}
+
+.debug-toggle-thumb {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  transition: transform .15s ease;
+}
+
+.debug-toggle.active {
+  opacity: 1;
+  border-color: var(--red);
+  background: rgba(191, 59, 43, .12);
+}
+
+.debug-toggle.active .debug-toggle-thumb {
+  background: var(--red);
+  transform: translateX(12px);
+}
