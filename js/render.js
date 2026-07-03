@@ -27,9 +27,7 @@ function render(){
   } else if (state.view==='detail') {
     view = buildDetailView();
   } else if (state.view==='create') {
-    view = document.createElement('div');
-    view.className = 'empty';
-    view.innerHTML = '<b>Создание экскурсии</b>Форма создания будет здесь.';
+    view = buildCreateView();
   } else if (state.view==='bookings') {
     view = buildBookingsView();
   } else if (state.view==='requests') {

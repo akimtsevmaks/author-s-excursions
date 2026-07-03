@@ -25,6 +25,7 @@
 </header>
 
 <main id="app"></main>
+<button class="fab" id="fabBtn" type="button"><span class="plus">✚</span> Создать экскурсию</button>
 
 <div class="modal-back hidden" id="modalBack"></div>
 <div id="toast"></div>
@@ -229,22 +230,87 @@
   </div>
 </template>
 
+<template id="tpl-create">
+  <button class="back" id="backBtn" type="button">← Назад к каталогу</button>
+  <h2 class="section-title">Создать экскурсию</h2>
+  <section class="panel mt-0">
+    <div class="form-grid">
+      <div class="field wide"><label for="c-name">Название экскурсии *</label>
+        <input id="c-name" maxlength="90" placeholder="Например: Крыши и парадные Петербурга"></div>
+
+      <div class="field wide"><label for="c-photos">Фотографии</label>
+        <input type="file" id="c-photos" accept="image/*" multiple>
+        <div class="photo-strip" id="photoStrip"></div>
+        <div class="hint">Можно выбрать несколько изображений — они появятся в карточке экскурсии.</div></div>
+
+      <div class="field wide"><label for="c-short">Краткое описание *</label>
+        <input id="c-short" maxlength="140" placeholder="Одно-два предложения для карточки в каталоге"></div>
+
+      <div class="field wide"><label for="c-full">Полное описание *</label>
+        <textarea id="c-full" rows="5" placeholder="Маршрут, что увидят участники, что взять с собой…"></textarea></div>
+
+      <div class="field"><label for="c-country">Страна *</label>
+        <input id="c-country" placeholder="Россия"></div>
+      <div class="field"><label for="c-city">Город или район *</label>
+        <input id="c-city" placeholder="Санкт-Петербург"></div>
+
+      <div class="field"><label for="c-format">Формат *</label>
+        <select id="c-format">
+          <option>Групповая</option><option>Индивидуальная</option><option>Самостоятельная</option>
+        </select></div>
+      <div class="field"><label for="c-duration">Длительность *</label>
+        <input id="c-duration" placeholder="Например: 3 часа"></div>
+
+      <div class="field" id="groupSizeField"><label for="c-groupsize">Размер группы *</label>
+        <input type="number" id="c-groupsize" min="2" placeholder="До скольки человек"></div>
+      <div class="field"><label for="c-kids">Дети</label>
+        <select id="c-kids"><option value="yes">Можно с детьми</option><option value="no">Только взрослые</option></select></div>
+
+      <div class="field"><label for="c-transport">Способ передвижения *</label>
+        <select id="c-transport"><option>Пешком</option><option>Автобусом</option><option>На автомобилях группы</option></select></div>
+      <div class="field"><label for="c-pricetype">Стоимость указана</label>
+        <select id="c-pricetype"><option value="person">За одного</option><option value="group">За группу</option></select></div>
+
+      <div class="field"><label for="c-price">Стоимость, ₽ *</label>
+        <input type="number" id="c-price" min="0" placeholder="2500"></div>
+      <div class="field"><label for="c-contacts">Контакты создателя *</label>
+        <input id="c-contacts" placeholder="Имя · телефон · почта или @ник">
+        <div class="hint">Гость получит их на почту после подтверждения брони</div></div>
+
+      <div class="field wide"><label>Доступное время (необязательно)</label>
+        <div class="slot-list" id="slotList"></div>
+        <div class="row-gap">
+          <input type="datetime-local" id="c-slot" class="slot-input">
+          <button class="btn btn-ghost mini" id="addSlotBtn" type="button">Добавить время</button>
+        </div>
+        <div class="hint">Если время не задано, экскурсия бронируется в свободном формате.</div></div>
+    </div>
+    <button class="btn btn-primary btn-block mt-20" id="publishBtn" type="button">Опубликовать экскурсию</button>
+  </section>
+</template>
+
+<template id="tpl-photo-thumb"><img alt="Фото экскурсии"></template>
+
+<template id="tpl-added-slot">
+  <div class="row">
+    <span class="slot sel slot-static" data-field="time"></span>
+    <button class="btn btn-ghost mini" data-action="remove" type="button">Убрать</button>
+  </div>
+</template>
+
 <script src="js/storage.js"></script>
 <script src="js/cover.js"></script>
 <script src="js/format.js"></script>
 <script src="js/seed.js"></script>
-
 <script src="js/modal.js"></script>
 <script src="js/city.js"></script>
-
 <script src="js/catalog.js"></script>
 <script src="js/detail.js"></script>
-
 <script src="js/mail.js"></script>
 <script src="js/bookings.js"></script>
 <script src="js/mail-view.js"></script>
 <script src="js/requests.js"></script>
-
+<script src="js/create.js"></script>
 <script src="js/state.js"></script>
 <script src="js/render.js"></script>
 <script src="js/main.js"></script>
