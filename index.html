@@ -151,6 +151,22 @@
 
 <template id="tpl-slot-button"><button class="slot" type="button"></button></template>
 
+<template id="tpl-pay-modal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <h3>Оплата онлайн</h3>
+    <p>Демо-режим интернет-эквайринга: реального списания не произойдёт.</p>
+    <div class="spec mb-18">
+      <div><span>Экскурсия</span><span data-field="name"></span></div>
+      <div><span>Участников</span><span data-field="people"></span></div>
+      <div><span>К оплате</span><span data-field="total"></span></div>
+    </div>
+    <div class="modal-buttons">
+      <button class="btn btn-ghost" id="payCancelBtn" type="button">Отмена</button>
+      <button class="btn btn-primary" id="payBtn" type="button">Оплатить <span data-field="totalBtn"></span></button>
+    </div>
+  </div>
+</template>
+
 
 <script src="js/storage.js"></script>
 <script src="js/cover.js"></script>
@@ -162,6 +178,8 @@
 
 <script src="js/catalog.js"></script>
 <script src="js/detail.js"></script>
+
+<script src="js/mail.js"></script>
 
 <script src="js/state.js"></script>
 <script src="js/render.js"></script>

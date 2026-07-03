@@ -116,3 +116,56 @@ function buildDetailView() {
 
   return frag;
 }
+
+
+function showPayModal(e, people, total, onConfirm){
+  const tpl = document.getElementById('tpl-pay-modal');
+  const frag = tpl.content.cloneNode(true);
+  frag.querySelector('[data-field="name"]').textContent = e.name;
+  frag.querySelector('[data-field="people"]').textContent = people;
+  frag.querySelector('[data-field="total"]').textContent = fmtMoney(total);
+  frag.querySelector('[data-field="totalBtn"]').textContent = fmtMoney(total);
+  frag.querySelector('#payCancelBtn').addEventListener('click', closeModal);
+  frag.querySelector('#payBtn').addEventListener('click', onConfirm);
+  showModal(frag);
+}
+
+function submitBooking(e, peopleInput, emailInput){
+  const people = parseInt(peopleInput.value);
+  const email = emailInput.value.trim();
+  if (e.slots.length && !state.booking.slot) return toast('Выберите время экскурсии');
+  if (!people || people < 1) return toast('Укажите количество человек');
+  if (e.format==='Групповая' && e.groupSize && people > e.groupSize) return toast(`В группе максимум ${e.groupSize} человек`);
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return toast('Укажите корректную почту');
+  if (!state.booking.pay) return toast('Выберите способ оплаты');
+
+  const finish = () => {
+    const bookings = LS.get(K.BOOK,[]);
+    const bk = { id:uid(), excId:e.id, excName:e.name, slot:state.booking.slot, people, email,
+                 pay:state.booking.pay, status:'pending', createdAt:new Date().toISOString() };
+    bookings.unshift(bk);
+    LS.set(K.BOOK, bookings);
+    const total = e.priceType==='person' ? e.price*people : e.price;
+    sendMail(email, `Бронирование оформлено: ${e.name}`,
+`Ваше бронирование принято и ожидает подтверждения гида.
+
+Экскурсия: ${e.name}
+Город: ${e.country}, ${e.city}
+${bk.slot ? 'Время: ' + fmtDT(bk.slot) : 'Время: свободный формат, гид свяжется с вами'}
+Участников: ${people}
+Оплата: ${bk.pay==='online' ? 'онлайн (оплачено, демо)' : 'на месте'}
+Сумма: ${fmtMoney(total)}
+
+Как только гид подтвердит бронирование, мы пришлём его контакты отдельным письмом.`);
+    closeModal();
+    toast('Бронирование оформлено — подтверждение отправлено на почту');
+    go('bookings');
+  };
+
+  if (state.booking.pay === 'online'){
+    const total = e.priceType==='person' ? e.price*people : e.price;
+    showPayModal(e, people, total, finish);
+  } else {
+    finish();
+  }
+}
