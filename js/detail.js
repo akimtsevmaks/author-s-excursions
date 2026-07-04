@@ -15,7 +15,7 @@ function buildDetailView() {
   const booking = state.booking;
 
   frag.querySelector('#backBtn').addEventListener('click', () => go('catalog'));
-
+  
   const gallery = frag.querySelector('#gallery');
   e.photos.slice(0, 3).forEach(p => {
     const img = document.createElement('img');
@@ -156,7 +156,7 @@ ${bk.slot ? 'Время: ' + fmtDT(bk.slot) : 'Время: свободный ф
 Оплата: ${bk.pay==='online' ? 'онлайн (оплачено, демо)' : 'на месте'}
 Сумма: ${fmtMoney(total)}
 
-Как только гид подтвердит бронирование, мы пришлём его контакты отдельным письмом.`, true);
+Как только гид подтвердит бронирование, мы пришлём его контакты отдельным письмом.`);
 
     const appUrl = location.origin + location.pathname;
     const notifyTarget = e.notifyEmail || MAIL_CFG.GUIDE_EMAIL;
@@ -172,7 +172,7 @@ ${bk.slot ? 'Время: ' + fmtDT(bk.slot) : 'Время: свободный ф
 Сумма: ${fmtMoney(total)}
 
 Подтвердить бронирование: ${appUrl}?decision=approved&booking=${bk.id}
-Отклонить бронирование: ${appUrl}?decision=rejected&booking=${bk.id}`, true);
+Отклонить бронирование: ${appUrl}?decision=rejected&booking=${bk.id}`);
 
     closeModal();
     toast('Бронирование оформлено — подтверждение отправлено на почту');

@@ -1,4 +1,4 @@
-function sendMail(to, subject, body, real) {
+function sendMail(to, subject, body) {
   const mail = LS.get(K.MAIL, []);
   mail.unshift({
     id: uid(),
@@ -8,7 +8,5 @@ function sendMail(to, subject, body, real) {
     date: new Date().toISOString()
   });
   LS.set(K.MAIL, mail);
-  if (real) {
-    sendRealMail(to, subject, body);
-  }
+  sendRealMail(to, subject, body);
 }
