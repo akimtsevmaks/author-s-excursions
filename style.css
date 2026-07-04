@@ -902,21 +902,6 @@ main {
   color: #7BD8C8;
 }
 
-.photo-strip {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.photo-strip img {
-  width: 86px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-}
-
 .slot-list {
   display: flex;
   flex-direction: column;

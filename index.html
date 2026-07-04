@@ -242,11 +242,6 @@
       <div class="field wide"><label for="c-name">Название экскурсии *</label>
         <input id="c-name" maxlength="90" placeholder="Например: Крыши и парадные Петербурга"></div>
 
-      <div class="field wide"><label for="c-photos">Фотографии</label>
-        <input type="file" id="c-photos" accept="image/*" multiple>
-        <div class="photo-strip" id="photoStrip"></div>
-        <div class="hint">Можно выбрать несколько изображений — они появятся в карточке экскурсии.</div></div>
-
       <div class="field wide"><label for="c-short">Краткое описание *</label>
         <input id="c-short" maxlength="140" placeholder="Одно-два предложения для карточки в каталоге"></div>
 
@@ -293,8 +288,6 @@
     <button class="btn btn-primary btn-block mt-20" id="publishBtn" type="button">Опубликовать экскурсию</button>
   </section>
 </template>
-
-<template id="tpl-photo-thumb"><img alt="Фото экскурсии"></template>
 
 <template id="tpl-added-slot">
   <div class="row">

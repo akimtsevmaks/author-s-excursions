@@ -2,14 +2,11 @@ function buildCreateView(){
   const tpl = document.getElementById('tpl-create');
   const frag = tpl.content.cloneNode(true);
 
-  let photos = [];
   let slots = [];
 
   frag.querySelector('#backBtn').addEventListener('click', ()=>go('catalog'));
 
   const nameInput = frag.querySelector('#c-name');
-  const photosInput = frag.querySelector('#c-photos');
-  const photoStrip = frag.querySelector('#photoStrip');
   const shortInput = frag.querySelector('#c-short');
   const fullInput = frag.querySelector('#c-full');
   const countryInput = frag.querySelector('#c-country');
@@ -33,44 +30,6 @@ function buildCreateView(){
   };
   formatSelect.addEventListener('change', syncGroupSizeVisibility);
   syncGroupSizeVisibility();
-
-  photosInput.addEventListener('change', ()=>{
-    const allFiles = [...photosInput.files];
-    const files = allFiles.filter(f => f.type.startsWith('image/')).slice(0, 6);
-    photos = [];
-    photoStrip.replaceChildren();
-    if (allFiles.length && !files.length) return toast('Выберите файлы изображений (JPG, PNG и т.п.)');
-    if (files.length < allFiles.length) toast('Часть файлов пропущена — это не изображения');
-    if (!files.length) return;
-    let loaded = 0;
-    files.forEach(f=>{
-      const reader = new FileReader();
-      reader.onload = () => {
-        const img = new Image();
-        img.onload = () => {
-          const maxSize = 960;
-          const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
-          const canvas = document.createElement('canvas');
-          canvas.width = Math.round(img.width * scale);
-          canvas.height = Math.round(img.height * scale);
-          canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-          photos.push(canvas.toDataURL('image/jpeg', 0.8));
-          loaded++;
-          if (loaded === files.length){
-            photoStrip.replaceChildren();
-            photos.forEach(p=>{
-              const thumbTpl = document.getElementById('tpl-photo-thumb');
-              const thumbFrag = thumbTpl.content.cloneNode(true);
-              thumbFrag.querySelector('img').src = p;
-              photoStrip.appendChild(thumbFrag);
-            });
-          }
-        };
-        img.src = reader.result;
-      };
-      reader.readAsDataURL(f);
-    });
-  });
 
   const renderSlots = () => {
     slotList.replaceChildren();
@@ -128,14 +87,14 @@ function buildCreateView(){
       price:Number(priceInput.value),
       contacts:contactsInput.value.trim(),
       notifyEmail,
-      photos: photos.length ? photos : [cover('#0E7A6B','#16262E','🧭')],
+      photos: [cover('#0E7A6B','#16262E','🧭')],
       slots:[...slots], creator:'user'
     });
 
     try {
       LS.set(K.EXC, exc);
     } catch (err) {
-      return toast('Не удалось сохранить экскурсию: слишком много данных в хранилище браузера. Попробуйте меньше/меньшего размера фото');
+      return toast('Не удалось сохранить экскурсию: слишком много данных в хранилище браузера.');
     }
 
     toast('Экскурсия опубликована');
