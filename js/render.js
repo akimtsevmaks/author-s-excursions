@@ -21,20 +21,27 @@ function render(){
 
   const app = document.getElementById('app');
   let view;
-  
-  if (state.view==='catalog') {
-     view = buildCatalogView();
-  } else if (state.view==='detail') {
-    view = buildDetailView();
-  } else if (state.view==='create') {
-    view = buildCreateView();
-  } else if (state.view==='bookings') {
-    view = buildBookingsView();
-  } else if (state.view==='requests') {
-    view = buildRequestsView();
-  } else if (state.view==='mail') {
-    view = buildMailView();
+
+  switch (state.view) {
+    case 'catalog':
+      view = buildCatalogView();
+      break;
+    case 'detail':
+      view = buildDetailView();
+      break;
+    case 'create':
+      view = buildCreateView();
+      break;
+    case 'bookings':
+      view = buildBookingsView();
+      break;
+    case 'requests':
+      view = buildRequestsView();
+      break;
+    case 'mail':
+      view = buildMailView();
+      break;
   }
-  
+
   app.replaceChildren(view);
 }

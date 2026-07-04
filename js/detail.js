@@ -156,7 +156,7 @@ ${bk.slot ? 'Время: ' + fmtDT(bk.slot) : 'Время: свободный ф
 Оплата: ${bk.pay==='online' ? 'онлайн (оплачено, демо)' : 'на месте'}
 Сумма: ${fmtMoney(total)}
 
-Как только гид подтвердит бронирование, мы пришлём его контакты отдельным письмом.`);
+Как только гид подтвердит бронирование, мы пришлём его контакты отдельным письмом.`, true);
 
     const appUrl = location.origin + location.pathname;
     const notifyTarget = e.notifyEmail || MAIL_CFG.GUIDE_EMAIL;
